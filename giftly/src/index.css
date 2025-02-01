@@ -1,1 +1,26 @@
 @import "tailwindcss";
+
+body {
+  font-family: 'Garet', sans-serif;  
+  background-color: #f1f1f1;
+}
+
+/* Define Garet font */
+@font-face {
+  font-family: 'Garet';
+  src: url('./assets/fonts/Garet.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+/* Define Amsterdam font */
+@font-face {
+  font-family: 'Amsterdam';
+  src: url('./assets/fonts/Amsterdam.ttf') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+h3 {
+  font-family: 'Amsterdam', serif;
+}
