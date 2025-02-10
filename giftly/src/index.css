@@ -13,6 +13,14 @@ body {
   font-style: normal;
 }
 
+/* Define GaretHeavy font */
+@font-face {
+  font-family: 'Garet-Heavy';
+  src: url('./assets/fonts/Garet-Heavy.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
 /* Define Amsterdam font */
 @font-face {
   font-family: 'Amsterdam';

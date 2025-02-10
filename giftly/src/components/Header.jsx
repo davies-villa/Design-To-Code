@@ -1,24 +1,35 @@
 import React from 'react';
+import { motion } from 'framer-motion';
+import flowersImage from '../assets/Flower.png'; 
 
 const Header = () => {
   return (
-    <header className="relative bg-cover bg-center h-[400px] md:h-[500px] flex items-center justify-center text-center text-gray-800" >
-      
-      {/* Overlay */}
-      <div className="absolute inset-0 bg-opacity-0"></div>
-
-      {/* Text Content */}
-      <div className="relative z-10 px-4 max-w-2xl">
-        <h1 className="text-3xl md:text-5xl font-bold leading-tight">
-          Surprise Your Loved Ones with <br /> Beautiful Bouquets
-        </h1>
-        <p className="mt-4 text-lg md:text-xl">
-          Handpicked flowers, beautifully arranged for every occasion.
-        </p>
-        <button className="mt-6 bg-red-500 hover:bg-red-600 text-white py-3 px-6 rounded-lg text-lg font-semibold transition">
-          Shop Now
-        </button>
+    <header className="relative bg-cover bg-center h-[500px] flex flex-col items-center justify-center text-center text-gray-800 overflow-hidden">
+      {/* Fading "Flowers" Text */}
+      <div className="absolute top-12 flex flex-col items-center opacity-20 space-y-4">
+        {[...Array(3)].map((_, i) => (
+          <motion.span 
+            key={i} 
+            className="text-7xl md:text-7xl font-bold opacity-0 text-gray-300"
+            style={{ fontFamily: 'Garet-Heavy', color: i === 1 ? 'red' : 'gray' }}
+            initial={{ opacity: 0, y: -50 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: i * 0.5 }}
+          >
+            Flowers
+          </motion.span>
+        ))}
       </div>
+
+      {/* Centered Flower Image */}
+      <div className="relative z-20 flex justify-center items-center mb-16">
+        <img 
+          src={flowersImage} 
+          alt="Flowers" 
+          className="w-64 h-64 object-contain"
+        />
+      </div>
+
     </header>
   );
 };
